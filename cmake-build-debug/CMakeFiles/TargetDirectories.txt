@@ -1,0 +1,3 @@
+C:/Users/marko/Documents/SysProg/cmake-build-debug/CMakeFiles/SysProg.dir
+C:/Users/marko/Documents/SysProg/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/marko/Documents/SysProg/cmake-build-debug/CMakeFiles/rebuild_cache.dir

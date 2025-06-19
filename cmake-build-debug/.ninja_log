@@ -1,0 +1,22 @@
+# ninja log v5
+2	158	7720267231955942	build.ninja	e5bd9e63443e3222
+11	137	7720267233977495	CMakeFiles/SysProg.dir/vorgabe/src/LCFSPR.c.obj	19697bea17cae8d5
+20	146	7720267234097794	CMakeFiles/SysProg.dir/vorgabe/src/HRRN.c.obj	bbd2bb0c362eb969
+37	152	7720267234117932	CMakeFiles/SysProg.dir/vorgabe/src/FCFS.c.obj	e83415db1f061714
+16	158	7720267234097794	CMakeFiles/SysProg.dir/vorgabe/src/PRIONP.c.obj	2603c5ecf1b647b3
+42	164	7720267234157943	CMakeFiles/SysProg.dir/vorgabe/src/colors.c.obj	60b952b31b96b173
+0	171	7720267234157943	CMakeFiles/SysProg.dir/vorgabe/src/RR.c.obj	49cbc4a1ee48ea9d
+26	177	7720267234318334	CMakeFiles/SysProg.dir/vorgabe/src/MLF.c.obj	19ae1582b060e171
+54	182	7720267234318334	CMakeFiles/SysProg.dir/vorgabe/tests/test_LCFSPR_simple.c.obj	73d531a3f8cf0e42
+7	183	7720267234338327	CMakeFiles/SysProg.dir/vorgabe/src/scheduler.c.obj	9dc83d253e6957f
+59	184	7720267234328319	CMakeFiles/SysProg.dir/vorgabe/tests/test_queue_complex.c.obj	c1364e84b3d35008
+49	185	7720267234503819	CMakeFiles/SysProg.dir/vorgabe/tests/test_MLF_simple.c.obj	ebd8764ac7fe5e3e
+31	187	7720267234533868	CMakeFiles/SysProg.dir/vorgabe/src/queue.c.obj	da3f8bef1b87a81b
+146	254	7720267235220205	CMakeFiles/SysProg.dir/vorgabe/src/SRTN.c.obj	95adaad8c8f0e197
+152	263	7720267235280204	CMakeFiles/SysProg.dir/vorgabe/tests/test_PRIONP_simple.c.obj	fe4bee930161c39e
+137	263	7720267235280204	CMakeFiles/SysProg.dir/vorgabe/tests/test_HRRN_simple.c.obj	df6ad464b45b9d90
+158	274	7720267235415764	CMakeFiles/SysProg.dir/vorgabe/tests/test_queue_simple.c.obj	8ad267e37b8be520
+171	279	7720267235475795	CMakeFiles/SysProg.dir/vorgabe/tests/test_SRTN_simple.c.obj	92c70345a14d64f
+164	279	7720267235475795	CMakeFiles/SysProg.dir/vorgabe/tests/test_RR_simple.c.obj	7336ef5a547539fc
+177	282	7720267235507747	CMakeFiles/SysProg.dir/vorgabe/tests/test_RR_complex.c.obj	df12e1300299b31a
+2	95	7720272780926600	CMakeFiles/SysProg.dir/vorgabe/src/queue.c.obj	da3f8bef1b87a81b
