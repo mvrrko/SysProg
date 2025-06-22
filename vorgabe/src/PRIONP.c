@@ -6,30 +6,28 @@ process* PRIONP_tick(process* running_process) {
     // Wenn ein Prozess läuft, läuft er weiter (nicht-preemptiv)
     if (running_process) return running_process;
 
-    // Kein Prozess läuft, wähle den mit höchster Prio aus der Queue
+    // Kein Prozess läuft, wähle den mit höchster Prio aus der Queue, der schon angekommen ist
     queue_object *prev = PRIONP_queue;
     queue_object *curr = PRIONP_queue->next;
     queue_object *max_prev = PRIONP_queue;
-    queue_object *max_node = curr;
-    int found = 0;
+    queue_object *max_node = NULL;
+    int max_priority = -1;
 
-    // Suche Prozess mit höchster Prio
     while (curr) {
         process *p = (process*)curr->object;
-        process *max_p = max_node ? (process*)max_node->object : NULL;
-        if (!max_node || (p->priority > max_p->priority)) {
+        if (p->start_time <= 0 && (int)p->priority > max_priority) {
+            max_priority = p->priority;
             max_prev = prev;
             max_node = curr;
-            found = 1;
         }
         prev = curr;
         curr = curr->next;
     }
 
-    if (found && max_node) {
-        // Entferne max_node aus der Queue
+    if (max_node) {
         max_prev->next = max_node->next;
         process *ret = (process*)max_node->object;
+        free(max_node); // Nur das Queue-Element freigeben!
         return ret;
     }
     return NULL;
@@ -41,13 +39,20 @@ int PRIONP_startup() {
 }
 
 process* PRIONP_new_arrival(process* arriving_process, process* running_process) {
-    // Füge neuen Prozess in die Queue ein
-    queue_add(arriving_process, PRIONP_queue);
-    // Nicht-preemptiv: laufender Prozess bleibt, neuer Prozess wartet
+    if (arriving_process)
+        queue_add(arriving_process, PRIONP_queue);
     return running_process;
 }
 
 void PRIONP_finish() {
-    free_queue(PRIONP_queue);
+    if (!PRIONP_queue) return;
+    queue_object *curr = PRIONP_queue->next;
+    while (curr) {
+        queue_object *next = curr->next;
+        // free(curr->object);   // <--- ENTFERNEN!
+        free(curr);
+        curr = next;
+    }
+    free(PRIONP_queue);
     PRIONP_queue = NULL;
 }
