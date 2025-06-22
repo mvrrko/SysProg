@@ -41,13 +41,11 @@ process *MLF_tick(process *running_process)
         // Level 3: kein Quantum, Prozess läuft bis fertig
         if (running_level == MLF_LEVELS - 1) {
             if (running_process->time_left == 0) {
-                free(running_process);
                 running_process = NULL;
             }
         } else {
             // Quantum abgelaufen oder Prozess fertig?
             if (running_process->time_left == 0) {
-                free(running_process);
                 running_process = NULL;
                 quantum_counter = 0;
             } else if (quantum_counter == quantums[running_level]) {

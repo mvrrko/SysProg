@@ -30,7 +30,6 @@ process* PRIONP_tick(process* running_process) {
         // Entferne max_node aus der Queue
         max_prev->next = max_node->next;
         process *ret = (process*)max_node->object;
-        free(max_node);
         return ret;
     }
     return NULL;

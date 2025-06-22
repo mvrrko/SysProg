@@ -18,7 +18,6 @@ process *RR_tick(process *running_process)
 
         // Prozess fertig?
         if (running_process->time_left == 0) {
-            free(running_process);
             running_process = NULL;
             quantum_counter = 0;
         }

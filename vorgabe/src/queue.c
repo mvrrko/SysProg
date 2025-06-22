@@ -42,6 +42,10 @@ void free_queue(queue_object *queue)
     queue_object *curr = queue->next;
     while (curr) {
         queue_object *next = curr->next;
+        if (curr->object) {
+            free(curr->object);
+            curr->object = NULL; // <--- WICHTIG!
+        }
         free(curr);
         curr = next;
     }
